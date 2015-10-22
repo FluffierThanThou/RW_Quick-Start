@@ -296,14 +296,12 @@ namespace Fluffy.QS
             // mods config screen.
             if (windowChanged && window != null)
             {
-                Log.Message(window.GetType().FullName);
                 if ("RimWorld.Page_SelectStoryteller".Equals(window.GetType().FullName))
                 {
                     // Check if the mod is enabled.
                     if (ModEnabled)
                     {
                         ReplaceWindow(window, new Page_SelectStoryteller());
-                        Log.Message("Added Quick Start button");
                     }
                 }
 
