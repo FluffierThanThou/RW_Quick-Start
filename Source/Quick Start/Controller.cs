@@ -7,7 +7,6 @@ using System.Reflection;
 using RimWorld.Planet;
 using UnityEngine;
 using Verse;
-// ReSharper disable PossibleNullReferenceException
 
 namespace Fluffy.QS
 {
