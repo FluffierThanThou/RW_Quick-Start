@@ -1,2 +1,0 @@
-C:\Users\Karel\Desktop\RimWorld914Win\Mods\Quick Start\Assemblies\Quick Start.dll
-C:\Users\Karel\Desktop\RimWorld914Win\Mods\Quick Start\Source\Quick Start\obj\Release\Quick Start.dll
