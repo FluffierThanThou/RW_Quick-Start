@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ModHelperDef>
+        <defName>Fluffy_QuickStart_Bootstrap</defName>
+        <ModName>Quick Start</ModName>
+        <version>0.12.5</version>
+        <SpecialInjectors>
+        	<li>QuickStart.Bootstrap</li>
+        </SpecialInjectors>
+    </ModHelperDef>
+</Defs>
