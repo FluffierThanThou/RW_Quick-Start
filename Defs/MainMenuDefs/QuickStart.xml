@@ -1,0 +1,6 @@
+    <MainMenuDef>
+        <defName>QuickStart</defName>
+        <labelKey>Fluffy.QuickStart</labelKey>
+        <order>701</order>
+        <menuClass>QuickStart.Controller</menuClass>
+    </MainMenuDef>
