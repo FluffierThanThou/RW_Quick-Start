@@ -7,15 +7,16 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using Verse;
+using CommunityCoreLibrary;
 
 namespace QuickStart
 {
-    public static class QuickStartController
+    public class Controller : IMainMenu
     {
         #region Methods
 
         // The main quick start logic, makes all the pieces ready, and starts the new game.
-        public static void QuickStart()
+        public void QuickStart()
         {
             Log.Message( "QuickStart :: Initilizing new game with default/random settings." );
 
@@ -27,7 +28,7 @@ namespace QuickStart
             LongEventHandler.QueueLongEvent( startGame, "Shaving muffalos..." );
         }
 
-        public static bool TryLoadNewestWorld()
+        public bool TryLoadNewestWorld()
         {
             FileInfo fileInfo = ( from wf in SavedWorldsDatabase.AllWorldFiles
                                   orderby wf.LastWriteTime descending
@@ -56,7 +57,7 @@ namespace QuickStart
             return true;
         }
 
-        private static void MakeReadyAndStartGame()
+        private void MakeReadyAndStartGame()
         {
             if ( !TryLoadNewestWorld() )
             // for one reason or another, loading saved world failed, so we'll create a new one.
@@ -89,7 +90,7 @@ namespace QuickStart
             Application.LoadLevel( "Gameplay" );
         }
 
-        private static bool ModListsMatch( List<string> a, List<string> b )
+        private bool ModListsMatch( List<string> a, List<string> b )
         {
             if ( a.Count != b.Count )
                 return false;
@@ -99,6 +100,16 @@ namespace QuickStart
                     return false;
             }
             return true;
+        }
+
+        public void ClickAction()
+        {
+            QuickStart();
+        }
+
+        public bool RenderNow( bool anyWorldFiles, bool anyMapFiles )
+        {
+            return Game.Mode == GameMode.Entry;
         }
 
         #endregion Methods
